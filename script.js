@@ -1,5 +1,4 @@
-import { apiKey } from "./api.js";
-// Replace with your API key
+import apiKey from "./api.js";
 
 // Function to fetch weather by city name
 function getWeather() {
@@ -12,6 +11,7 @@ function getWeather() {
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
   );
 }
+window.getWeather = getWeather;
 
 // Function to fetch weather by user's location
 function getWeatherByLocation() {
@@ -31,6 +31,7 @@ function getWeatherByLocation() {
     alert("Geolocation is not supported by your browser.");
   }
 }
+window.getWeatherByLocation = getWeatherByLocation;
 
 // Function to fetch weather data from API
 function fetchWeatherData(url) {
